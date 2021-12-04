@@ -1,6 +1,20 @@
 # KeywordExtra
 
-**TODO: Add description**
+Utility for comparing nested keyword lists where order is irrelevant.
+
+## Example
+
+```elixir
+fruit = [citrus: [:orange, :lemon]]
+veg = [colourful: [:peppers, :tomatoes], bland: [:potatoes]]
+kw1 = [food: [fruit: fruit, veg: veg]]
+kw2 = [food: [veg: veg, fruit: fruit]]
+
+Keyword.equal?(kw1, kw2) # false
+kw1 == kw2 # false
+
+KeywordExtra.sorted_equal?(kw1, kw2) # true
+```
 
 ## Installation
 
